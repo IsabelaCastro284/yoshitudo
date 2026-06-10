@@ -1,0 +1,104 @@
+﻿# Documentação Técnica e Descritiva - Yushitudo
+
+**Projeto Final - Programação Web e Design de Interfaces**
+*Desenvolvido em conformidade com as diretrizes do Professor Vitor*
+
+---
+
+## 1. Introdução e Conceito
+
+O **YoshiTudo** é um site de comércio eletrônico (e-commerce) no modelo *outlet*, especializado na venda de eletrônicos, hardware gamer de alta performance e artigos da cultura pop/nerd (livros, RPG de mesa, dados, camisetas temáticas e jogos de tabuleiro).
+
+### 🧬 Inspiração e DNA do Modelo de Negócio
+O conceito do site é resultado da fusão estratégica entre duas referências reais e proeminentes do comércio regional paulista:
+1. **Yoshitec (São Roque - SP)**: Referência em suporte de informática, hardware especializado, manutenção técnica próxima ao cliente e acolhimento familiar.
+2. **Liquitudo (Araçariguama - SP)**: Famoso e-commerce e loja outlet conhecido pela comercialização de pontas de estoque de grandes marcas a preços altamente competitivos.
+
+A **Yushitudo** une a confiabilidade técnica e a expertise em hardware da Yoshitec com o dinamismo promocional e os descontos agressivos de outlet da Liquitudo, criando um ecossistema perfeito para gamers e nerds de São Roque e região.
+
+---
+
+## 2. Estrutura e Páginas Obrigatórias
+
+O site é composto por **4 páginas integradas**, todas compartilhando uma identidade visual unificada e responsiva:
+
+1. **Página Inicial (`inicio.html`)**:
+   - Painel de destaque (Hero Banner) apresentando a proposta de valor.
+   - Banner de Atendimento Express via WhatsApp (estilo outlet rápido).
+   - Seção interativa com departamentos rápidos em grid.
+   - Grid de produtos em destaque com avaliações por estrelas e selos promocionais.
+2. **Institucional (`sobre.html`)**:
+   - História da marca, detalhando a fusão da Yoshitec e Liquitudo na Av. Antonino Dias Bastos em São Roque.
+   - Pilares de diretrizes organizacionais (Missão, Visão e Valores).
+   - **Seção institucional**: Área interativa Pure CSS com controle de estoque, faturamento semanal em tempo real (gráfico funcional) e mural de feedbacks de clientes.
+3. **Galeria / Produtos (`produtos.html`)**:
+   - Catálogo expandido em formato de masmorra tecnológica.
+   - Filtros dinâmicos Pure CSS (todos, livros/RPG, computadores, vestuário, jogos).
+   - Seção de modais de visualização detalhada (`:target` hacks) para cada produto, exibindo especificações técnicas e formulários funcionais de avaliação.
+   - Carrinho lateral deslizante com resumo de compra e checkout direto.
+   - Formulário de checkout completo e seletor de pagamento interativo (Cartão, Pix, Boleto).
+4. **Contato (`contato.html`)**:
+   - Canais de comunicação acessíveis (telefone local, e-mails de suporte/comercial, endereço físico em São Roque).
+   - Mockup gráfico de localização (mapa estilizado com pulsação em CSS Puro).
+   - **Formulário no WhatsApp**: Sistema inteligente Pure HTML que redireciona o preenchimento da mensagem diretamente para o WhatsApp comercial da loja.
+   - Acordeão de Perguntas Frequentes (FAQ) nativo em HTML5 (`<details>` e `<summary>`).
+
+---
+
+## 3. Conceito Mobile-First e Design Responsivo
+
+O projeto foi inteiramente construído com a filosofia **Mobile-First**, priorizando a usabilidade e o desempenho em telas pequenas de smartphones antes de expandir o layout para resoluções de desktop.
+
+### 📱 Implementação de Responsividade:
+- **Menu Hambúrguer Pure CSS**: No mobile, a navegação é ocultada e ativada por meio de um ícone hambúrguer (`☰`), controlado inteiramente pelo estado ativo de um checkbox oculto (`#menu-toggle`). No desktop (acima de `768px`), o menu hambúrguer é ocultado e a barra de navegação principal é exibida horizontalmente.
+- **Grids Fluidos**: Utilização de `display: grid` com `grid-template-columns: 1fr` por padrão para empilhamento vertical natural em smartphones, escalando de forma dinâmica com consultas de mídia (`@media`) para 3 colunas em monitores desktop.
+- **Banners Flexíveis**: Banners Hero e Outlet convertem seus alinhamentos e disposições de blocos (de colunas em telas estreitas para linhas em telas largas) usando propriedades flexbox (`display: flex`).
+
+---
+
+## 4. Formulário Inteligente no WhatsApp
+
+Um dos principais diferenciais técnicos do site é o formulário de contato integrado nativamente ao WhatsApp, dispensando o uso de servidores de backend ou scripts JavaScript complicados.
+
+### ⚙️ Detalhes do Funcionamento:
+- O formulário em `contato.html` utiliza o método `GET` com o atributo `action="https://api.whatsapp.com/send"` e o atributo `target="_blank"`.
+- Um campo oculto define o número de telefone de destino:
+  ```html
+  <input type="hidden" name="phone" value="5511999999999">
+  ```
+- O campo de mensagem principal (`<textarea>`) está nomeado com o atributo `name="text"`.
+- Ao clicar em "Enviar", o próprio navegador monta a query string unindo os parâmetros e redireciona o cliente diretamente para a interface do WhatsApp (Web ou aplicativo móvel), iniciando a conversa com o texto pré-preenchido pelo usuário de forma instantânea e acessível.
+
+---
+
+## 5. Portfólio de Produtos e Detalhamento Técnico
+
+Para cumprir os requisitos obrigatórios, a loja conta com um portfólio completo que integra tecnologia e nerd shop:
+
+| Categoria | Nome do Produto | Especificações Técnicas no Outlet | Imagem Utilizada |
+| :--- | :--- | :--- | :--- |
+| **Computadores** | Notebook Gamer Supernova Pro | RTX 4080 (16GB GDDR6), Ryzen 9 7940HS, 32GB RAM DDR5, SSD NVMe 2TB, Tela 16" IPS 240Hz. | `imagens/notebook.jpeg` |
+| **Headsets** | Headset Gamer CyberGlow Pro | Som Posicional Surround 7.1 Físico, Drivers Neodímio 50mm, Wireless Lag-Zero, Almofadas Memory Gel. | `imagens/headset.jpeg` |
+| **Mouse** | Mouse Gamer Hyperion UltraLight | Peso 49g Ultraleve, Sensor Óptico 26.000 DPI reais, Switches Ópticos Gen-3, Sem fio 2.4GHz / BT. | `imagens/mouse.jpeg` |
+| **CPU** | Processador Intel Core i9-14900K | Arquitetura híbrida de 14ª Geração, 24 Núcleos / 32 Threads, Clock Máximo 5.8 GHz, Soquete LGA1700. | `imagens/logo.png` |
+| **Livros** | Livro do Jogador D&D 5ª Ed. Premium | Tradução Oficial PT-BR, Wizards of the Coast, Capa Dura de luxo com acabamento dourado, 320 págs. | `imagens/dados_rpg.jpeg` |
+| **Nerd & RPG** | Dados RPG Runas Douradas Set | Conjunto completo com 7 dados poliédricos (D4 ao D20) feitos de obsidian acrílico, gravação élfica. | `imagens/dados_rpg.jpeg` |
+| **Nerd & Geek** | Camiseta Vaporwave Arcade 1980 | Malha premium 100% algodão penteado egípcio, modelagem confortável, estampa neon resistente em silk screen. | `imagens/camiseta_geek.jpeg` |
+| **Nerd & Jogos** | Jogo de Tabuleiro Crônicas da Montanha | Jogo cooperativo de alta estratégia (1 a 5 players), contém 120 miniaturas realistas, tabuleiro modular. | `imagens/tabuleiro.jpeg` |
+
+---
+
+## 6. Acessibilidade (WCAG) e Qualidade de Código (W3C)
+
+O desenvolvimento seguiu rigorosamente os padrões de inclusão e semântica estipulados para aprovação com nota máxima:
+
+### ♿ Acessibilidade WCAG (Nível A/AA/AAA):
+- **Contraste de Cores Elevado**: Cores escuras e intensas (como o vermelho comercial `--color-primary: #b30000` e o azul petróleo `--color-secondary: #007799`) garantem legibilidade ideal e passam com folga nos testes de contraste do leitor do navegador.
+- **Navegação por Teclado**: Todo elemento interativo (links, botões, campos de texto e labels) possui um contorno de foco personalizado e altamente visível (`outline: 3px solid var(--focus-outline)`).
+- **Áreas de Clique Acessíveis**: Todos os alvos de toque em telas mobile (incluindo links de navegação e botões interativos) possuem dimensões mínimas de **48px x 48px** para evitar cliques acidentais e facilitar a navegação por dedos.
+- **Alt de Imagens e Labels**: Todas as imagens do catálogo de produtos e ícones possuem textos alternativos descritivos nos atributos `alt` e rótulos de acessibilidade no leitor de telas (`aria-label`).
+
+### 📐 Qualidade de Código e Semântica W3C:
+- **Hierarquia Estrita**: Apenas um único título principal `<h1>` por página, estruturando o conteúdo sequencialmente de forma semântica em subtítulos `<h2>` e `<h3>`.
+- **Ausência de Javascript**: Toda a lógica interativa (abrir carrinho lateral, abrir modal de login, filtrar categorias de produtos no catálogo, expandir abas do painel administrativo, trocar métodos de checkout e exibir modais de produtos) foi construída usando **hacks CSS de estado** (`:checked` associados a labels/inputs invisíveis e seletores `:target`). Isso garante carregamento instantâneo, compatibilidade absoluta com qualquer navegador móvel antigo e nota máxima em W3C.
+

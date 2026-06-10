@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- Configurações básicas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título do site -->
+    <title>Contato | YoshiTudo</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="estilos/geral.css">
+    <link rel="stylesheet" href="estilos/contato.css">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- CABEÇALHO / MENU -->
+    <!-- ========================= -->
+
+    <header class="cabecalho">
+
+        <!-- Logo -->
+        <a href="index.html" class="logotipo">
+            ⚡ YoshiTudo 
+        </a>
+
+        <!-- Menu -->
+        <nav class="menu">
+
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contato.html" class="ativo">Contato</a>
+
+        </nav>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- TÍTULO DA PÁGINA -->
+    <!-- ========================= -->
+
+    <section class="titulo-pagina">
+
+        <h1>📞 Fale com a gente</h1>
+
+        <p>
+            Tire suas dúvidas, peça informações ou mande uma sugestão.
+        </p>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- CONTATO -->
+    <!-- ========================= -->
+
+    <main class="pagina-contato">
+
+        <!-- Informações -->
+        <section class="informacoes-contato">
+
+            <h2>Informações da loja</h2>
+
+            <p>
+                📍 Av. castroconnorsilva - Fatecanos- SP
+            </p>
+
+            <p>
+                🕒 Aberto todos os dias das 10h às 19h
+            </p>
+
+            <p>
+                📧 contato@yoshitudo.com.br
+            </p>
+
+            <p>
+                💬 WhatsApp:
+                <a href="https://wa.me/5511999999999" target="_blank" class="link-whatsapp">
+                    <img src="marcas/whatsapp.svg" alt="WhatsApp" class="icone-whatsapp">
+                    <span>(11) 99999-9999</span>
+                </a>
+            </p>
+
+            <!-- Mapa -->
+            <div class="mapa">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1110244917977!2d-47.13630302467088!3d-23.528508878822475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf0d55820f0aa9%3A0x45c066f7a375456a!2sYOSHITEC%20ELETRONICOS!5e0!3m2!1spt-BR!2sbr!4v1780077567970!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+
+        </section>
+
+        <!-- Formulário -->
+        <section class="formulario-contato">
+
+            <h2>Enviar mensagem</h2>
+
+            <form id="contato-whatsapp" action="https://api.whatsapp.com/send" method="get" target="_blank">
+                <input type="hidden" name="phone" value="5511995099712">
+                <input type="hidden" name="text" id="mensagem-completa">
+
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Seu nome" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Seu e-mail" required>
+
+                <label for="categoria">Assunto</label>
+                <select id="categoria" required>
+                    <option value="">Selecione um assunto</option>
+                    <option value="informacões sobre produtos">Informações sobre produtos</option>
+                    <option value="ajuda com um pedido">Ajuda com um pedido</option>
+                    <option value="suporte">Suporte</option>
+                    <option value="enviar uma sugestão">Enviar uma sugestão</option>
+                </select>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" placeholder="Digite sua mensagem" required></textarea>
+
+                <button type="submit" class="botao">
+                    Enviar
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- ========================= -->
+    <!-- RODAPÉ -->
+    <!-- ========================= -->
+
+    <footer class="rodape">
+
+        <div class="conteudo-rodape">
+
+            <div class="coluna-rodape">
+                <h4>LOCALIZAÇÃO</h4>
+                <p>Av. CastroConoorSilva </p>
+                <p>Fatecanos - SP </p>
+            </div>
+
+            <div class="coluna-rodape">
+                <h4>CONTATO E REDES SOCIAIS</h4>
+
+                <div class="links-sociais">
+                    <a href="https://www.facebook.com/" target="_blank" class="botao-social" aria-label="Facebook">
+                        <img src="marcas/facebook.svg" alt="Facebook">
+                    </a>
+
+                    <a href="https://www.instagram.com/" target="_blank" class="botao-social" aria-label="Instagram">
+                        <img src="marcas/instagram.svg" alt="Instagram">
+                    </a>
+
+                    <a href="https://www.youtube.com/" target="_blank" class="botao-social" aria-label="YouTube">
+                        <img src="marcas/youtube.svg" alt="YouTube">
+                    </a>
+
+                    <a href="https://wa.me/5511999999999" target="_blank" class="botao-social" aria-label="WhatsApp">
+                        <img src="marcas/whatsapp.svg" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+
+            <div class="coluna-rodape">
+                <p class="mensagem-rodape">
+                    Nós te ajudamos! Entre em contato através de nossas redes sociais.
+                </p>
+            </div>
+
+        </div>
+
+        <p class="direitos">
+            Copyright © <span>YoshiTudo</span> 2026
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
